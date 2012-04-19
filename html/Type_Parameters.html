@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    margin: 10px 13px 10px 13px;
+}
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+@media screen and (min-width: 768px) {
+    body {
+        width: 748px;
+        margin:10px auto;
+    }
+}
+</style>
+<title>Untitled.html</title>
+</head>
+<body>
+<h2>Type Parameters</h2>
+
+<p>Type parameters are defined as <code>identifier[T]</code>, where <em><code>T</code></em> is the type parameter for <em><code>identifier</code></em> of a type, class, trait, or method. Type parameters may also define variance, bounds and constraints.</p>
+
+<ul>
+<li><code>type Identifier[T]</code></li>
+<li><code>class Identifier[T]</code></li>
+<li><code>trait Identifier[T]</code></li>
+<li><code>def identifier[T]</code></li>
+</ul>
+
+
+<h3>Type Variances</h3>
+
+<ul>
+<li><code>[+T]</code> &ndash; where <code>T</code> is <em><a href="http://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)">Covariant</a></em></li>
+<li><code>[-T]</code> &ndash; where <code>T</code> is <em><a href="http://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)">Contravariant</a></em></li>
+</ul>
+
+
+<h3>Type Bounds</h3>
+
+<ul>
+<li><code>[T &lt;: Type]</code> &ndash; <code>T</code> is <em><a href="http://www.scala-lang.org/node/136">Upper Type Bound</a></em> by <code>Type</code> &rarr; <code>T</code> inherits from <code>Type</code></li>
+<li><code>[T &gt;: Type]</code> &ndash; <code>T</code> is <em><a href="http://www.scala-lang.org/node/137">Lower Type Bound</a></em> &rarr; <code>Type</code> inherits from <code>T</code></li>
+<li><code>[T &lt;% Type]</code> &ndash; <code>T</code> is <em><a href="http://stackoverflow.com/questions/4465948/what-are-scala-context-and-view-bounds/4467012#4467012">View Bound</a></em> &rarr; <code>T</code> viewable as a <code>Type</code>, either <code>T</code> derives from <code>Type</code> or an implicit conversion exists <code>T=&gt;Type</code></li>
+<li><code>[T : Type]</code>&nbsp;&nbsp; &ndash; <code>T</code> is <em><a href="http://stackoverflow.com/questions/4465948/what-are-scala-context-and-view-bounds/4467012#4467012">Context Bound</a></em> &rarr; <code>Type</code> parameterized by <code>T</code>, via an implicit value within context.</li>
+</ul>
+
+
+<h3>Type Constraints</h3>
+
+<p>Type Constraints are similar to Type Parameter Bounds, except they apply to function arguments. I include this here, because it can be applied as an alternative.</p>
+
+<ul>
+<li><code>f(x: T =:= Type)</code> &ndash; <code>T</code> is <code>Type</code>, not inherit from <code>Type</code></li>
+<li><code>f(x: T &lt;:&lt; Type)</code> &ndash; <code>T</code> inherits from <code>Type</code>, similar to <em><a href="http://www.scala-lang.org/node/136">Upper Type Bound</a></em></li>
+<li><code>f(x: T &lt;%&lt; Type)</code> &ndash; <code>T</code> viewable as <code>Type</code>, similar to <em><a href="http://stackoverflow.com/questions/4465948/what-are-scala-context-and-view-bounds/4467012#4467012">View Bound</a></em></li>
+</ul>
+
+</body>
+</html>
