@@ -1,6 +1,6 @@
 ## Type Parameters
 
-Type parameters are defined as `identifier[T]`, where *`T`* is the type parameter for *`identifier`* of a type, class, trait, or method. Type parameters may also define variance, bounds and constraints.
+Type parameters are defined as `identifier[T]`, where _`T`_ is the type parameter for *`identifier`* of a type, class, trait, or method. Type parameters may also define variance, bounds and constraints.
 
 - `type Identifier[T]`
 - `class Identifier[T]`
