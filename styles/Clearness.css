@@ -1,8 +1,3 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<style>
 h1,
 h2,
 h3,
@@ -121,39 +116,3 @@ pre code {
         margin:10px auto;
     }
 }
-</style>
-<title>Operators.html</title>
-</head>
-<body>
-<h2>Operators</h2>
-
-<h3>Precedence</h3>
-
-<p>In order of highest to lowest.</p>
-
-<ol>
-<li>all other special characters</li>
-<li><code>* / %</code></li>
-<li><code>+ -</code></li>
-<li><code>:</code></li>
-<li><code>= !</code></li>
-<li><code>&lt; &gt;</code></li>
-<li><code>&amp;</code></li>
-<li><code>^</code></li>
-<li><code>|</code></li>
-<li>all letters: <code>[a-zA-Z]</code></li>
-</ol>
-
-
-<p>See <em><a href="http://www.scala-lang.org/docu/files/ScalaReference.pdf">Scala Reference</a></em>.</p>
-
-<h3>Declaration</h3>
-
-<ul>
-<li><code>X unary_~</code> &ndash; <code>~</code> is a unary operator &rarr; <code>~x</code></li>
-<li><code>X :~(x: X)</code> &ndash; <code>~</code> is left associative &rarr; <code>x :~ y</code> == <code>x.:~(y)</code></li>
-<li><code>X ~:(x: X)</code> &ndash; <code>~</code> is right associative &arr; <code>y ~: x</code> == <code>x.~:(y)</code></li>
-</ul>
-
-</body>
-</html>
